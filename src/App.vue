@@ -1,28 +1,97 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+    <div id="app">
+      <TheHeader/>
+        <main id="main">
+          <router-view/>
+        </main>
+        <TheBanner/>
+        <TheSectionMain/>
+        <TheSectionSecondary/>        
+      <TheFooter/>    
+    </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import TheHeader from "@/components/TheHeader.vue";
+import TheBanner from "@/components/TheBanner.vue";
+import TheSectionMain from "@/components/TheSectionMain.vue";
+import TheSectionSecondary from "@/components/TheSectionSecondary.vue";
+import TheFooter from "@/components/TheFooter.vue";
+
+
 
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
+  components:{
+    TheHeader,
+    TheBanner,
+    TheSectionMain,
+    TheSectionSecondary,
+    TheFooter,
+    
   }
-}
+};
 </script>
 
+
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+* {
+  box-sizing: border-box;
+}
+body,
+ul,
+li,
+h1,h2,
+p{
+  padding: 2px;
+  margin: 0px;
+}
+
+ul{
+  list-style: none;
+}
+
+body{
+  font-family: "Avenir", Helvetica, Arial, sans-serif; 
+  color: #345;
+  background: url('./assets/fundo.jpg') repeat top;
+}
+
+a{
+  color:#345;
+  text-decoration: none;
+}
+
+img{
+  max-width:  100%;
+  display: block;
+}
+
+.btn { 
+   display: block;
+   padding: 10px 30px;
+   background:  rgb(199, 19, 73);;
+   border-radius: 4px;
+   color: #fff;
+   text-align: center;
+   font-size: 1rem;
+   box-shadow: 0 4px 8px rgba(30, 60, 90, 0.2);
+   transition: all 0.3s;
+   border:none;
+   font-family: "Avenir", Helvetica, Arial, sans-serif;
+   cursor: pointer;
+}
+
+.btn:hover {
+   background: rgb(199, 19, 73);;
+   transform: scale(1.1);
+}
+
+#app{
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+#main {
+   flex: 1;
 }
 </style>
